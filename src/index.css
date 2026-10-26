@@ -2,34 +2,62 @@
 
 @layer base {
     body {
-        background-color: var(--color-primary);
+        min-width: 320px;
+        min-height: 100vh;
+        margin: 0;
+        background:
+            radial-gradient(ellipse at top, var(--color-colorElevatedCard), transparent 58%),
+            var(--color-colorBackgroundPrimary);
+        color: var(--color-colorTextPrimary);
         text-align: center;
+        font-family: ui-sans-serif, system-ui, sans-serif;
     }
 
     h1 {
-        font-size: 48px;
+        font-size: 23px;
         font-weight: semibold;
-        margin: 40px 0 16px 0;
-        color: var(--color-textColor)
+        margin: 32px 0 8px 0;
+        color: var(--color-colorTextPrimary);
     }
 
     main {
         justify-items: center;
+        min-height: 100vh;
     }
 
     p {
-        color: var(--color-textColor);
+        font-size: 16px;
+        font-weight: medium;
+        color: var(--color-colorTextSecondary);
+    }
+
+    @media (min-width: 768px) {
+        h1 {
+            font-size: 31px;
+        }
+        p {
+            font-size: 21px;
+        }
     }
 }
 
 @theme {
     /* COLORS */
-    --color-primary: #222;
-    --color-textColor: #eee;
 
-    --color-actualTurnColor: #515151;
+    --color-colorBackgroundPrimary: #080914;
+    --color-colorAcentPrimary: #a855f7;
+    --color-colorAcentSecondary: #d946ef;
+    --color-colorBrightnessPurple: #c084fc;
+    --color-colorSurfaceCard: #10111f;
     
-    --color-buttonHoverColor: #ccc;
+    /* Paneles elevados */
+    --color-colorElevatedCard: #19182a;
 
-    --color-winnerScreenColor: rgba(0, 0, 0, 0.5);
+    /* Text colors */
+    --color-colorTextPrimary: #f8fafc;
+    --color-colorTextSecondary: #cbd5e1;
+    --color-colorTextTerciary: #94a3b8;
+
+    /* Board colors*/
+    --color-colorSutilBoard: #30263f;
 }
