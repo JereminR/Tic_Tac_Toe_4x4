@@ -55,8 +55,10 @@ function App() {
   return (
     <>
       <main>
-        <h1> Tic-Tac-Toe 4x4 </h1>
-        <p> The first player to get 4 in a row wins </p>
+        <div className='flex flex-col justify-center items-center px-4'>
+          <h1> Tic-Tac-Toe <span className='text-colorAcentPrimary'>4x4</span> </h1>
+          <p> The first player to get 4 in a row wins </p>
+        </div>
         <RestartGameButton resetGame={resetGame}></RestartGameButton>
         <Board board={board} turn={turn} turns={turns} updateBoard={updateBoard}></Board>
         <WinnerScreen winner={winner} resetGame = {resetGame}></WinnerScreen>

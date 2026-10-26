@@ -22,11 +22,19 @@ export function WinnerScreen({winner, resetGame}) {
 
     if (winner !== null) {
         return(
-            <section className='fixed top-0 left-0 w-full h-full
-             backdrop-blur-xs bg-winnerScreenColor z-100
-             flex justify-center items-center' >
-                <div className='text-textColor w-fit h-fit m-12 p-12 border border-textColor rounded-xl justify-items-center relative'>
-                    <span>
+            <section className='
+            h-full w-full
+            fixed top-0 left-0 z-100 
+            flex items-center justify-center
+          bg-[color-mix(in_srgb,var(--color-colorBackgroundPrimary)_82%,transparent)] backdrop-blur-sm'>
+                <div className='
+                text-colorTextPrimary
+                 h-fit w-fit
+                p-8 m-6 sm:p-12
+                bg-colorElevatedCard
+                border border-colorAcentPrimary rounded-2xl
+                relative justify-items-center shadow-[0_0_28px_var(--color-colorAcentPrimary)] '>
+                    <span className='text-xl font-semibold'>
                         {isDraw ? 'Draw:' : 'Winner:'}
                     </span>
                     
@@ -34,8 +42,14 @@ export function WinnerScreen({winner, resetGame}) {
                     
                     <RestartGameButton resetGame={resetGame}></RestartGameButton>
                     
-                    <button className='text-xs text-textColor bg-primary border border-textColor w-6 h-6 rounded-full
-                    cursor-pointer absolute -top-2.5 -right-2.5 hover:text-primary hover:bg-textColor hover:border-primary transition-transform' 
+                    <button className='
+                    h-7 w-7
+                    text-colorTextPrimary text-xs
+                    bg-colorSurfaceCard hover:bg-colorAcentPrimary
+                    border border-colorAcentPrimary rounded-full
+                    absolute -top-2.5 -right-2.5  cursor-pointer    
+                    transition-colors
+                    '
                     onClick={()=>setShowModal(false)} title='Close'> X </button>
                 </div>
             </section>
